@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "546995305655",
+    "project_id": "myfirstfirebaseproject-c35dd",
+    "storage_bucket": "myfirstfirebaseproject-c35dd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:546995305655:android:c6747d1ddac3ad81b46132",
+        "android_client_info": {
+          "package_name": "com.example.baas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHzUfEwvtNtP_0jBV2TyGHm-v7v7ajQYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
