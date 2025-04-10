@@ -1,5 +1,4 @@
-
-
+import 'package:baas/firebase_services.dart';
 import 'package:baas/register_paage.dart';
 import 'package:flutter/material.dart';
 
@@ -14,12 +13,21 @@ class _LoginPageState extends State<LoginPage> {
   late final TextEditingController _emailController;
   late final TextEditingController _passController;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final FirebaseServices _firebaseServices = FirebaseServicesImpl();
 
   @override
   void initState() {
     _emailController = TextEditingController();
     _passController = TextEditingController();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _emailController.dispose();
+    _passController.dispose();
   }
 
   @override
@@ -58,21 +66,23 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 24),
                 ElevatedButton(
-                    onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        print('Form is Validated');
-                      }
-                    },
-                    child: Text('Login')),
-                SizedBox(
-                  height: 24,
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      print('Form is Validated');
+                      // Log  in  details check from firebase here
+                    }
+                  },
+                  child: Text('Login'),
                 ),
+                SizedBox(height: 24),
                 TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (context) => RegisterPage()));
-                    },
-                    child: Text("Not yet registered ? Register"))
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => RegisterPage()),
+                    );
+                  },
+                  child: Text("Not yet registered ? Register"),
+                ),
               ],
             ),
           ),
